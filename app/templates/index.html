@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask-SocketIO-Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #ffcc00;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flask-SocketIO-Chat</h1>
+    <div class="form-container">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <label>{{ form.name.label }}</label>
+            {{ form.name() }} {% for error in form.name.errors %}<small style="color: red;">{{ error }}</small>{% endfor %}
+            <label>{{ form.room.label }}</label>
+            {{ form.room() }} {% for error in form.room.errors %}<small style="color: red;">{{ error }}</small>{% endfor %}
+            {{ form.submit(class_="btn") }}
+        </form>
+    </div>
+</body>
+</html>
