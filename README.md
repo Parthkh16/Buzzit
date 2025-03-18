@@ -45,6 +45,5 @@ This is a real-time chat application built using Flask-SocketIO. It allows users
 ## Contributing
 If you’d like to contribute, fork the repository and submit a pull request with your improvements.
 
-## License
-This project is open-source and available under the [MIT License](LICENSE).
+
 
